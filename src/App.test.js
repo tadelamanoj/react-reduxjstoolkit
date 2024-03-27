@@ -31,3 +31,13 @@ test('increments and decrements counter', () => {
   fireEvent.click(decrementButton);
   expect(getByText('Counter: 0')).toBeInTheDocument();
 });
+
+test('renders Home component when navigating to "/" route', () => {
+  const { getByText } = render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+  );
+
+  expect(getByText('Welcome to Home')).toBeInTheDocument();
+});

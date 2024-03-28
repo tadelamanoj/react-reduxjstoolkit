@@ -1,10 +1,11 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, NavLink} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './features/counter/counterSlice';
 import Home from './components/Home';
 import About from './components/About';
+import ArrayComponent from './components/ArrayComp';
 
 function App() {
   const count = useSelector((state) => state.counter.value);
@@ -15,6 +16,7 @@ function App() {
         <h1>Counter: {count}</h1>
         <button onClick={() => dispatch(increment())}>Increment</button>
         <button onClick={() => dispatch(decrement())}>Decrement</button>
+        <ArrayComponent/>
         <Router>
           <Routes>
             <Route path="/" exact element={<Home/>} />

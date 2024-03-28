@@ -4,18 +4,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Home from './components/Home';
 import About from './components/About';
-import { decrementCounter, incrementCounter } from './features/actions/counterActions';
+import { decrement, increment } from './features/actions/counterActions';
 
 function App() {
   const count = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
-    dispatch(incrementCounter());
+    dispatch(increment());
   };
 
   const handleDecrement = () => {
-    dispatch(decrementCounter());
+    dispatch(decrement());
   };
 
   return (
